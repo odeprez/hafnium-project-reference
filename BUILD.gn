@@ -7,15 +7,43 @@
 import("//build/toolchain/embedded.gni")
 import("//build/toolchain/host.gni")
 
+group("aem_v8a_fvp_vhe") {
+  deps = [ "//src:hafnium(:aem_v8a_fvp_vhe_clang)" ]
+}
+
+group("qemu_aarch64_vhe") {
+  deps = [ "//src:hafnium(:qemu_aarch64_vhe_clang)" ]
+}
+
+group("rpi4") {
+  deps = [ "//src:hafnium(:rpi4_clang)" ]
+}
+
+group("secure_aem_v8a_fvp_vhe") {
+  deps = [ "//src:hafnium(:secure_aem_v8a_fvp_vhe_clang)" ]
+}
+
+group("secure_qemu_aarch64") {
+  deps = [ "//src:hafnium(:secure_qemu_aarch64_clang)" ]
+}
+
+group("secure_tc") {
+  deps = [ "//src:hafnium(:secure_tc_clang)" ]
+}
+
+group("secure_rd_fremont") {
+  deps = [ "//src:hafnium(:secure_rd_fremont_clang)" ]
+}
+
 group("root") {
   deps = [
-    "//src:hafnium(:aem_v8a_fvp_vhe_clang)",
-    "//src:hafnium(:qemu_aarch64_vhe_clang)",
-    "//src:hafnium(:rpi4_clang)",
-    "//src:hafnium(:secure_aem_v8a_fvp_vhe_clang)",
-    "//src:hafnium(:secure_qemu_aarch64_clang)",
-    "//src:hafnium(:secure_rd_fremont_clang)",
-    "//src:hafnium(:secure_tc_clang)",
+    ":aem_v8a_fvp_vhe",
+    ":qemu_aarch64_vhe",
+    ":rpi4",
+    ":secure_aem_v8a_fvp_vhe",
+    ":secure_qemu_aarch64",
+    ":secure_rd_fremont",
+    ":secure_tc",
     "//src/arch/aarch64/qemuloader:bl(:qemu_aarch64_vhe_clang)",
   ]
 }
