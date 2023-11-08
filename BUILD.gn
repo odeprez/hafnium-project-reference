@@ -199,14 +199,10 @@ aarch64_toolchains("rpi4") {
   }
 }
 
-# The Total Compute platform provides an envelope for all of Arm's latest IP.
-# TC0 and TC1 are reference open source software stack for the
-# Total Compute Fixed Virtual Platform (FVP). More info at:
-# https://community.arm.com/developer/tools-software/oss-platforms/w/docs/606/total-compute
-# https://gitlab.arm.com/arm-reference-solutions/arm-reference-solutions-docs/-/blob/master/docs/totalcompute/tc0/user-guide.rst
-#
-# Secure hafnium build for tc0 and tc1 platforms. This builds reference Secure Partition
-# Manager (SPM) for tc0 and tc1 with Armv8.4-A Secure-EL2 extension.
+# The Total Compute platform provides an envelope for Arm's latest client IPs.
+# Release notes and user manual for the open source software stack targeting
+# the Total Compute Fixed Virtual Platform (FVP) are found here:
+# https://totalcompute.docs.arm.com/en/latest/
 aarch64_toolchains("secure_tc") {
   cpu = "cortex-a57"
   origin_address = "0xfd000000"
